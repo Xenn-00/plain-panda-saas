@@ -16,7 +16,7 @@ const eb_garamond = EB_Garamond({
 export const metadata: Metadata = {
   title: "PlainPanda",
   description: "Created using jStack",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "PlainPanda icon", url: "/brand-asset-profile-picture.png" }],
 }
 
 export default function RootLayout({
@@ -27,8 +27,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className={cn(inter.variable, eb_garamond.variable)}>
-        <body className="font-sans bg-brand-50 text-brand-950 antialiased">
-          <Providers>{children}</Providers>
+        <body className="flex min-h-[calc(100vh-1px)] flex-col bg-brand-50 font-sans text-brand-950 antialiased">
+          <main className="relative flex flex-1 flex-col">
+            <Providers>{children}</Providers>
+          </main>
         </body>
       </html>
     </ClerkProvider>

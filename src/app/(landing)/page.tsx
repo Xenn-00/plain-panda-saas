@@ -1,10 +1,11 @@
 import { DiscordMessage } from "@/components/discord-message"
 import { Heading } from "@/components/heading"
+import { Icons } from "@/components/icons"
 import { MaxWidthWrapper } from "@/components/max-width-wrapper"
 import { MockDiscordUI } from "@/components/mock-discord-ui"
 import { ShinyButton } from "@/components/shiny-button"
 import { AnimatedList } from "@/components/ui/animated-list"
-import { Check } from "lucide-react"
+import { Check, Star } from "lucide-react"
 import Image from "next/image"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
@@ -27,19 +28,19 @@ const Page = () => {
 
   return (
     <>
-      <section className="relative py-24 sm:py-32 bg-brand-25">
+      <section className="relative bg-brand-25 py-24 sm:py-32">
         <MaxWidthWrapper className="text-center">
-          <div className="relative mx-auto text-center flex flex-col items-center gap-10">
+          <div className="relative mx-auto flex flex-col items-center gap-10 text-center">
             <div>
               <Heading>
                 <span>Real-Time SaaS Insights,</span>
                 <br />
-                <span className="relative bg-gradient-to-r from-brand-700 to-brand-800 text-transparent bg-clip-text">
+                <span className="relative bg-gradient-to-r from-brand-700 to-brand-800 bg-clip-text text-transparent">
                   Delivered to Your Discord
                 </span>
               </Heading>
             </div>
-            <p className="text-base/7 text-gray-600 max-w-prose text-center text-pretty">
+            <p className="max-w-prose text-pretty text-center text-base/7 text-gray-600">
               PlainPanda is the easiest way to monitor your SaaS, Get instant
               notifications for{" "}
               <span className="font-semibold text-gray-700">
@@ -47,13 +48,13 @@ const Page = () => {
               </span>{" "}
               sent directly to your Discord.
             </p>
-            <ul className="space-y-2 text-base/7 text-gray-600 text-left flex flex-col  items-start">
+            <ul className="flex flex-col items-start space-y-2 text-left text-base/7 text-gray-600">
               {[
                 "Real-Time Discord alerts for critical events",
                 "Buy once, use forever",
                 "Track sales, new users, or any other event",
               ].map((item, index) => (
-                <li key={index} className="flex gap-1.5 items-center text-left">
+                <li key={index} className="flex items-center gap-1.5 text-left">
                   <Check className="size-5 shrink-0 text-brand-700" />
                   {item}
                 </li>
@@ -123,10 +124,10 @@ const Page = () => {
           </MaxWidthWrapper>
         </div>
       </section>
-      <section className="relative py-24 sm:py-32 bg-brand-25">
+      <section className="relative bg-brand-25 py-24 sm:py-32">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
           <div>
-            <h2 className="text-center text-base/7 text-brand-600 font-semibold">
+            <h2 className="text-center text-base/7 font-semibold text-brand-600">
               Intuitive Monitoring
             </h2>
             <Heading>Stay ahead with real-time insights</Heading>
@@ -135,9 +136,9 @@ const Page = () => {
             {/* first bento grid element */}
             <div className="relative lg:row-span-2">
               <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg) +1px)] lg:rounded-l-[calc(2rem+1px)]">
+              <div className="rounded-[calc(theme(borderRadius.lg) +1px)] relative flex h-full flex-col overflow-hidden lg:rounded-l-[calc(2rem+1px)]">
                 <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                  <p className="text-brand-950 font-medium tracking-tight mt-2 text-lg/7 max-lg:text-center">
+                  <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
                     Real-Time notifications
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
@@ -146,7 +147,7 @@ const Page = () => {
                   </p>
                 </div>
                 <div className="relative min-h-[30rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
-                  <div className="absolute inset-x-10 overflow-hidden bottom-0 top-10 rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
+                  <div className="absolute inset-x-10 bottom-0 top-10 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
                     <Image
                       className="size-full object-cover object-top"
                       src={"/phone-screen.png"}
@@ -163,7 +164,7 @@ const Page = () => {
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="text-brand-950 font-medium tracking-tight mt-2 text-lg/7 max-lg:text-center">
+                  <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
                     Track Any Event
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
@@ -188,7 +189,7 @@ const Page = () => {
               <div className="absolute inset-px rounded-lg bg-white" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="text-brand-950 font-medium tracking-tight mt-2 text-lg/7 max-lg:text-center">
+                  <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
                     Track Any Properties
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
@@ -206,14 +207,14 @@ const Page = () => {
                   />
                 </div>
               </div>
-              <div className="pointer-events-none rounded-lg absolute inset-px shadow ring-1 ring-black/5" />
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5" />
             </div>
             {/* forth bento grid element */}
             <div className="relative lg:row-span-2">
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
                 <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                  <p className="text-brand-950 font-medium tracking-tight mt-2 text-lg/7 max-lg:text-center">
+                  <p className="mt-2 text-lg/7 font-medium tracking-tight text-brand-950 max-lg:text-center">
                     Easy Integration
                   </p>
                   <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
@@ -222,10 +223,7 @@ const Page = () => {
                   </p>
                 </div>
                 <div className="relative min-h-[30rem] w-full grow">
-                  <div
-                    className="absolute bottom-0 left-10 top-10
-                   right-0 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl"
-                  >
+                  <div className="absolute bottom-0 left-10 right-0 top-10 overflow-hidden rounded-tl-xl bg-gray-900 shadow-2xl">
                     <div className="flex bg-gray-800/40 ring-1 ring-white/5">
                       <div className="-mb-px flex text-sm/6 font-medium text-gray-400">
                         <div className="border-b border-r border-b-white/20 border-r-white/10 bg-white/5 px-4 py-2 text-white">
@@ -257,12 +255,91 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="pointer-events-none rounded-lg absolute inset-px shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
+              <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]" />
             </div>
           </div>
         </MaxWidthWrapper>
       </section>
-      <section></section>
+      <section className="relative bg-white py-24 sm:py-32">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-20">
+          <div>
+            <h2 className="text-center text-base/7 font-semibold text-brand-600">
+              Real-World Experiences
+            </h2>
+            <Heading className="text-center">What our customers say</Heading>
+          </div>
+          <div className="mx-auto grid max-w-2xl grid-cols-1 divide-y divide-gray-200 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+            {/* first customer review */}
+            <div className="flex flex-auto flex-col gap-4 rounded-t-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-l-[2rem] lg:rounded-tr-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+              </div>
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PlainPanda has been a game-changer for me, I've been using it
+                for two months now and seeing sales pop up in real-time is super
+                satisfying.
+              </p>
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
+                <Image
+                  src={"/user-2.png"}
+                  className="rounded-full object-cover"
+                  alt="PlainPanda customer"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="flex items-center font-semibold">
+                    Priska Simanjuntak
+                    <Icons.VerificationBadge className="ml-1.5 inline-block size-4" />
+                  </p>
+                  <p className="text-sm text-gray-600">@priskaa__</p>
+                </div>
+              </div>
+            </div>
+            {/* second customer review */}
+            <div className="flex flex-auto flex-col gap-4 rounded-b-[2rem] bg-brand-25 p-6 sm:p-8 lg:rounded-r-[2rem] lg:rounded-bl-none lg:p-16">
+              <div className="mb-2 flex justify-center gap-0.5 lg:justify-start">
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+                <Star className="size-5 fill-brand-600 text-brand-600" />
+              </div>
+              <p className="text-pretty text-center text-base font-medium tracking-tight text-brand-950 sm:text-lg lg:text-left lg:text-lg/8">
+                PlainPanda's being paying off for our SaaS. Nice to have simple
+                way to see how we're doing day-to-day. Definetly makes our lives
+                easier.
+              </p>
+              <div className="mt-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start lg:justify-start">
+                <Image
+                  src={"/user-1.png"}
+                  className="rounded-full object-cover"
+                  alt="PlainPanda customer"
+                  width={48}
+                  height={48}
+                />
+                <div className="flex flex-col items-center sm:items-start">
+                  <p className="flex items-center font-semibold">
+                    Alex Margono
+                    <Icons.VerificationBadge className="ml-1.5 inline-block size-4" />
+                  </p>
+                  <p className="text-sm text-gray-600">@margono_point</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ShinyButton
+            href="/sign-up"
+            className="relative z-10 h-14 w-full max-w-xs text-base shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            Start For Free Today
+          </ShinyButton>
+        </MaxWidthWrapper>
+      </section>
     </>
   )
 }
