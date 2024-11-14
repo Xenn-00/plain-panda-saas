@@ -9,7 +9,8 @@
     "lint": "next lint",
     "deploy": "wrangler deploy",
     "prepare": "husky",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.1.0",
