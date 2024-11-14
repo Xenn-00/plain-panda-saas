@@ -36,7 +36,7 @@ export const EmptyCategoryState = ({
     if (hasEvents) router.refresh()
   }, [hasEvents, router])
 
-  const codeSnippet = `await fetch('https://plainpanda.vercel.app/api/events', {
+  const codeSnippet = `await fetch('https://plainpanda.vercel.app/api/v1/events', {
   method: 'POST',
   headers: {
     'Authorization': 'Bearer YOUR_API_KEY'
